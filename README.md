@@ -24,7 +24,7 @@ n * m = p
 
 Otherwise, the constructed cost matrix would be rectangular (`n` does not equal `p`) and the linear sum assignment function would fail.
 
-**NOTE:** In the event that there is no multiple of `n` that yields `p`, fake developers can be added to the CSV with `-1` semesters in Bits of Good, such that the number of developer nodes `p` becomes a multiple of `n` without significantly disrupting the result. An example of this can be found in the provided [example.csv](/example.csv) file.
+**NOTE:** In the event that there is no multiple of `n` that yields `p`, fake developers can be added to the CSV with `-1` semesters in Bits of Good, such that the number of developer nodes `p` becomes a multiple of `n` without significantly disrupting the result. An example of this can be found in the provided [example.csv](/example.csv) file, where a single fake developer is added to the bottom of the CSV so as to make the total number of developer nodes (6) be a multiple of the number of projects (3).
 
 Finally, the linear sum assignment function yields a set of unique indexes that point to each of the duplicated project nodes. Duplicate project nodes are combined together again into one, and the developers are printed out in a list next to each project. Voila! You have taken care of 70% of the work needed to match together developers with their project teams.
 
