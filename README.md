@@ -34,6 +34,8 @@ To set up the script, you must provide a properly formatted CSV file that matche
 - `csv_newline`: The newline characters of your CSV.
 - `projects`: A list of the projects that you are matching developers with.
 
+Before running the script, you should read the **NOTE** listed above regarding the ratio between projects and developers to see whether you need to add fake developers to the bottom of your CSV.
+
 With the CSV & script properly set up, you just need to run the script with:
 ```
 python pair.py
