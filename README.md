@@ -30,6 +30,8 @@ Finally, the linear sum assignment function yields a set of unique indexes that 
 
 ## Setup & operation
 
+This Python script requires Python 3, as well as the `numpy` and `scipy` packages.
+
 To set up the script, you must provide a properly formatted CSV file that matches the general layout of the provided [example.csv](/example.csv). Then, edit the following variables in the script:
 
 - `csv_filename`: The file name of your CSV.
