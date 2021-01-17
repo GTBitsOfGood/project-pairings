@@ -3,7 +3,7 @@ developers together with their project teams.
 
 ## The algorithm
 
-When framed as an [assignment problem](https://en.wikipedia.org/wiki/Assignment_problem), the problem of matching together developers with their project teams becomes rather trivial.
+This algorithm frames project pairings as an [assignment problem](https://en.wikipedia.org/wiki/Assignment_problem). Other approaches exist; however, this one is the most trivial to implement in Python.
 
 Each project and developer is defined as a node on a weighted bipartite graph, where
 the weight of the edges between project and developer nodes is equivalent to the rank that the developer assigned to that project, multiplied by the number of semesters that they have been in Bits of Good. For example, if John has been a part of Bits of Good for `3` semesters, and ranks the Mapscout project as his *second* choice, then the weight of the edge between the John & Mapscout nodes is calculated as follows:
@@ -11,6 +11,8 @@ the weight of the edges between project and developer nodes is equivalent to the
 ```
 weight = [rank] * [# semesters] = 2 * 3 = 6
 ```
+
+**The objective is to minimize the net weight of the edges for the weighted bipartite graph, such that the best possible project pairings are yielded according to the listed project preferences of developers.**
 
 The graph is then constructed as a *square* cost matrix, per the requirements of the [linear sum assignment](https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.linear_sum_assignment.html) function provided by the SciPy library. Each project and developer node is given an index, such that an entry in the matrix at column `i` and row `j` is the weight of the edge between the *ith* project and *jth* developer.
 
